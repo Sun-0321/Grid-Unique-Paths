@@ -1,0 +1,21 @@
+int Path(int m, int n) {
+        
+        if(m==1 || n==1)
+            return 1;
+        int res=m+n-2;
+        
+        //find factorial 
+        //int fac[]=new int[res+1];
+        
+	long long fac[res+1];
+        fac[0]=fac[1]=1;
+        
+        for(int i=2;i<=res;i++)
+        {
+            fac[i]=fac[i-1]*i;        
+        }
+        
+        return fac[res]/(fac[m-1]*fac[n-1]);
+        
+        
+    }
